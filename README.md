@@ -2,4 +2,4 @@
 
 This repository accompanies the research paper [Sparse ISO-FLOP Transformations for Maximizing Training Efficiency](https://arxiv.org/abs/2303.11525).
 
-Code to reproduce experiments will be released soon.
+Code to reproduce experiments will be released on 2023-12-08.
