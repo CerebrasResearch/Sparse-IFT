@@ -1,0 +1,6 @@
+slurm_outputs/**
+data/**
+_dataset/**
+logs/**
+save/**
+experiments/**

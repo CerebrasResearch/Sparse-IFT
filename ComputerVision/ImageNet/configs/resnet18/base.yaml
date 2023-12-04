@@ -1,0 +1,19 @@
+# data
+batch_size: 32
+
+# optimization
+lr: 0.256
+momentum: 0.875
+weight_decay: 3.0517578125e-05
+label_smoothing: 0.1
+
+# learning rate
+lr_scheduler: 'cosineannealing'
+lr_min: 0.0
+
+# runtime
+epochs: 90
+
+# amp
+amp: true
+num_gpus: 4

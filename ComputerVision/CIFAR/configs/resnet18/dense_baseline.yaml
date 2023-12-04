@@ -1,0 +1,4 @@
+seed:
+  - 0
+model: "resnet_18"
+block_name: "Block"

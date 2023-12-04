@@ -1,0 +1,20 @@
+# Seed
+seed: 0
+
+# Model
+model: 'resnet_18'
+
+# 50, 75%, 90% RigL baselines
+maskopt: 'rigl'
+maskopt_sparsity:
+  - 0.5
+  - 0.75
+  - 0.9
+maskopt_mask_distribution: 'uniform'
+maskopt_mask_init_method: 'random'
+maskopt_drop_fraction: 0.3
+maskopt_frequency: 100
+
+# Sparse-IFT
+sift_scaling: true
+sift_family: 'sparse_wide'

@@ -1,0 +1,20 @@
+# Seed
+seed:
+  - 1
+
+# Model
+model: "resnet_18"
+block_name: "BlockISOFlopFactorized"
+
+# 50, 75%, 90% RigL baselines
+maskopt:
+  - "rigl"
+maskopt_sparsity: 
+  - 0.50
+  - 0.75
+  - 0.90
+
+# Sparse-IFT
+sift_scaling: True
+sift_family: "sparse_factorized"
+uv_layer: "nonlinear_relu"
