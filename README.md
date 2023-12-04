@@ -11,7 +11,19 @@ This repository accompanies the research paper titled [Sparse ISO-FLOP Transform
 ## Prerequisites 
 Before running experiments or utilizing the code in this repository, please ensure the following prerequisites are met:
 
-1. Create a conda environment using the provided
+1. Add git submodules:
+```console
+cd Sparse-IFT
+git submodule update --init
+```
+
+2. Set the environment variable `CODE_SOURCE_DIR` to the path of the source code
+directory. This can be achieved using the following command:
+```console
+export CODE_SOURCE_DIR=/path/to/your/source/code
+```
+
+3. Create a conda environment using the provided
    environment configuration file.
 
 ```console
@@ -23,13 +35,7 @@ Activate the environment:
 conda activate sparseift_env
 ```
 
-2. Set the environment variable `CODE_SOURCE_DIR` to the path of the source code
-directory. This can be achieved using the following command:
-```console
-export CODE_SOURCE_DIR=/path/to/your/source/code
-```
-
-## Experiments
+## Quick Start: CIFAR-100 Experiments
 
 To run CIFAR-100/ImageNet experiments, enter the `ComputerVision` directory:
 ```console
@@ -67,6 +73,26 @@ python launch_utils/prepare_job_commands.py --job-name resnet18_cifar100_sparsed
 ##### Sparse-Doped + RigL
 ```console
 python launch_utils/prepare_job_commands.py --job-name resnet18_cifar100_sparsefactorized --base-dir /path/to/experiment/directory/ --base-cfg CIFAR/configs/resnet18/base.yaml --exp-cfg CIFAR/configs/resnet18/sparseift/sparsefactorized_rigl.yaml --run-cifar
+```
+
+## Quick Start: ImageNet Experiments
+
+##### Dense Baseline
+
+```console
+python launch_utils/prepare_job_commands.py --job-name resnet18_imagenet_dense_baseline --base-dir /path/to/experiment/directory/ --base-cfg ImageNet/configs/resnet18/base.yaml --exp-cfg ImageNet/configs/resnet18/dense_baseline.yaml 
+```
+
+### Sparse-IFT ResNet-18 on ImageNet
+
+##### Sparse-Wide + RigL
+```console
+python launch_utils/prepare_job_commands.py --job-name resnet18_imagenet_sparsewide --base-dir /path/to/experiment/directory/ --base-cfg ImageNet/configs/resnet18/base.yaml --exp-cfg ImageNet/configs/resnet18/sparseift/sparsewide_rigl.yaml 
+```
+
+##### Sparse-Parallel + RigL
+```console
+python launch_utils/prepare_job_commands.py --job-name resnet18_imagenet_sparseparallel --base-dir /path/to/experiment/directory/ --base-cfg ImageNet/configs/resnet18/base.yaml --exp-cfg ImageNet/configs/resnet18/sparseift/sparseparallel_rigl.yaml 
 ```
 
 # Citation
