@@ -17,4 +17,3 @@ maskopt_sparsity:
 # Sparse-IFT
 sift_scaling: True
 sift_family: "sparse_parallel"
-

@@ -21,3 +21,4 @@ def weights_init(m):
             m.weight.data.fill_(1.0)
         if m.bias is not None:
             m.bias.data.zero_()
+            
