@@ -16,4 +16,3 @@ epochs: 90
 
 # amp
 amp: true
-num_gpus: 4

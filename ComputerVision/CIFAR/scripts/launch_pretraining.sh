@@ -8,7 +8,7 @@ epochs=${epochs:-"200"}
 batch_size=${batch_size:-"128"}
 log_interval=${log_interval:-"100"}
 weight_decay=${weight_decay:-"5e-4"}
-output_dir=${output_dir:-"/cb/home/vithu/extra-storage/want/resnet18"}
+output_dir=${output_dir:-"/path/to/your/output/dir"}
 num_steps=${num_steps:-1}
 block_name=${block_name:-"Block"}
 optimizer=${optimizer:-"sgd"}
@@ -38,7 +38,7 @@ sparse_width_scaling=${sparse_width_scaling:-0.0}
 
 # Build the command
 ############
-CMD="/cb/home/vithu/anaconda3/envs/want/bin/python -u main.py "
+CMD="python -u main.py "
 CMD+=" --seed=$seed"
 CMD+=" --lr=$lr"
 CMD+=" --model=$model"

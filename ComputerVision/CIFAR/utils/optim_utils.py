@@ -203,27 +203,14 @@ def compute_explicit_weight_decay_low_rank(
                     loss_weight_decay = (
                         loss_weight_decay + weight_decay * 0.5 * _weight_norm
                     )
-                    # loss_weight_decay = (
-                    #     loss_weight_decay
-                    #     + weight_decay * 0.5 * (param ** 2).sum()
-                    # )
                 elif 'V_' in name:
                     # We do not apply weight-decay on V component, we apply on W 
                     # constructed by folding U and V.
                     continue
-                    # loss_weight_decay = (
-                    #     loss_weight_decay
-                    #     + weight_decay * 0.5 * (param ** 2).sum()
-                    # )
                 elif 'sparse_conv' in name:
-                    loss_weight_decay = (
-                        loss_weight_decay
-                        + weight_decay * 0.5 * (param ** 2).sum()
-                    )
                     # We do not apply weight-devay on sparse_conv component,
                     # we apply on W constructed by folding UV and sparse(W).
-                    # continue
-                    # loss_weight_decay = loss_weight_decay + weight_decay*0.5*(param**2).sum()
+                    continue
                 else:
                     # On all other parameters we apply weight-decay
                     loss_weight_decay = (

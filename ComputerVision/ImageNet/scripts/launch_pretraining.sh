@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # data params
-data_path=${data_path:-"/cb/datasets/cv/imagenet/imagenet1k_ilsvrc2012/"}
+data_path=${data_path:-"/datasets/cv/imagenet/imagenet1k_ilsvrc2012/"}
 interpolation=${interpolation:-"bilinear"}
 val_resize_size=${val_resize_size:-"256"}
 val_crop_size=${val_crop_size:-"224"}
@@ -29,7 +29,7 @@ lr_min=${lr_min:-"0.0"}
 
 # misc params
 print_freq=${print_freq:-"500"}
-output_dir=${output_dir:-"/tmp/dense"}
+output_dir=${output_dir:-"/path/to/your/output/dir"}
 seed=${seed:-0}
 amp=${amp:-"false"}
 sync_bn=${sync_bn:-"false"}
@@ -54,7 +54,7 @@ sift_family=${sift_family:-"sparse_wide"}
 
 # Build the command
 ############
-CMD="/cb/home/vithu/anaconda3/envs/want/bin/torchrun --standalone --nproc_per_node=$num_gpus main.py"
+CMD="torchrun --standalone --nproc_per_node=$num_gpus main.py"
 CMD+=" --model=$model"
 CMD+=" --block_name=$block_name"
 CMD+=" --input_size 3 224 224"
