@@ -1,0 +1,6 @@
+[submodule "cbsparse"]
+	path = cbsparse
+	url = git@github.com:CerebrasResearch/cbsparse.git
+[submodule "cbutils"]
+	path = cbutils
+	url = git@github.com:CerebrasResearch/cbutils.git

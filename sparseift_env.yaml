@@ -1,0 +1,13 @@
+name: sparseift_env
+channels:
+  - conda-forge
+  - pytorch
+  - nvidia
+dependencies:
+  - python=3.10
+  - pytorch=2.1.1
+  - torchvision=0.16.1 
+  - torchaudio=2.1.1
+  - pytorch-cuda=11.8
+  - tensorboard=2.15.1
+  - packaging=23.2

@@ -1,0 +1,10 @@
+# runtime
+batch_size: 128
+epochs: 200
+log_interval: 150
+
+# optimizer
+optimizer: "sgd"
+learning_rate: 0.1
+weight_decay: 5.0e-4
+momentum: 0.9

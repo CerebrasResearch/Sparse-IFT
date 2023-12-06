@@ -1,0 +1,18 @@
+# Seed
+seed:
+  - 0
+
+# Model
+model: "resnet_18"
+block_name: "Block"
+
+# 50%, 75%, 90% Static baselines
+maskopt: "static"
+maskopt_sparsity: 
+  - 0.50
+  - 0.75
+  - 0.90
+
+# Sparse-IFT
+sift_scaling: True
+sift_family: "sparse_wide"
