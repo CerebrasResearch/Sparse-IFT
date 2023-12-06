@@ -118,7 +118,6 @@ class DopedConv3x3(nn.Module):
 
         # Dynamically compute value of weight-decay based on sampling
         self.compute_weight_norm()
-        # self.compute_weight_norm_fullW()
 
         return out
 
