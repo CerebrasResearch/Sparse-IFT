@@ -31,7 +31,6 @@ from utils import (
     accuracy,
     compute_explicit_weight_decay_low_rank,
     get_data_loaders_for_runtime,
-    get_fused_model,
     get_optimizer_and_lr_scheduler,
     load_checkpoint,
     num_model_parameters,
@@ -106,11 +105,7 @@ def train(
         optimizer.step()
 
         if mask_optimizer is not None:
-            if args.maskopt_fused_bn_updates:
-                model, fused_model = get_fused_model(model)
-                mask_optimizer.step(fused_model=fused_model)
-            else:
-                mask_optimizer.step()
+            mask_optimizer.step()
 
         if train_profiler is not None:
             train_profiler.update_profile(samples_per_itr)
@@ -241,12 +236,9 @@ def test(args, model, test_loader, model_ckpt):
     can use to then run this test.
 
     $ python main.py --model cifar_resnet_18 --epochs 2
-    $ python main.py --model cifar_resnet_18 --test_only \
-        --test_checkpoint ./save/model_best.pth --test_fused_model
 
     ```
     Model test summary -- Acc@1: 26.1200  Acc@5: 56.8900
-    Fused Model test summary -- Acc@1: 26.1200  Acc@5: 56.8900
     ```
 
     Note that this will run the test and then exit -- which is desirable
@@ -258,13 +250,6 @@ def test(args, model, test_loader, model_ckpt):
 
     acc1_m = AverageMeter()
     acc5_m = AverageMeter()
-
-    if args.test_fused_model:
-        model, fused_model = get_fused_model(model)
-        model.eval()
-        fused_model.eval()
-        f_acc1_m = AverageMeter()
-        f_acc5_m = AverageMeter()
 
     with torch.no_grad():
         for data, target in test_loader:
@@ -279,16 +264,6 @@ def test(args, model, test_loader, model_ckpt):
             acc1_m.update(acc1.item(), output.size(0))
             acc5_m.update(acc5.item(), output.size(0))
 
-            if args.test_fused_model:
-                fused_output = fused_model(data)
-                f_acc1, f_acc5 = accuracy(
-                    fused_output,
-                    target.argmax(axis=1) if len(target.shape) > 1 else target,
-                    topk=(1, 5),
-                )
-                f_acc1_m.update(f_acc1.item(), output.size(0))
-                f_acc5_m.update(f_acc5.item(), output.size(0))
-
     print('-' * 60)
     print(
         'Model test summary -- '
@@ -296,13 +271,7 @@ def test(args, model, test_loader, model_ckpt):
             acc1=acc1_m, acc5=acc5_m,
         )
     )
-    if args.test_fused_model:
-        print(
-            'Fused Model test summary -- '
-            'Acc@1: {acc1.avg:>7.4f}  Acc@5: {acc5.avg:>7.4f}'.format(
-                acc1=f_acc1_m, acc5=f_acc5_m,
-            )
-        )
+
     print('-' * 60)
 
 
@@ -605,8 +574,6 @@ def main():
                         help='run test only and return')
     parser.add_argument('--test_checkpoint', type=str, default='',
                         help='checkpoint to run test on')
-    parser.add_argument('--test_fused_model', action='store_true', default=False,
-                        help='test fusion of conv+bn in the model as well')
 
     # Sift args
     parser.add_argument('--sift_scaling', action='store_true', default=False,
