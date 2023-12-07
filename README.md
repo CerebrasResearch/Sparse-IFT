@@ -1,15 +1,15 @@
-# Sparse ISO-FLOP Transformations for Maximizing Training Efficiency
+# Sparse Iso-FLOP Transformations for Maximizing Training Efficiency
 
 This is the official repository used to run the experiments in the paper that proposed Sparse-IFT. The codebase is implemented in PyTorch.
 
-[Sparse ISO-FLOP Transformations for Maximizing Training Efficiency](https://arxiv.org/abs/2303.11525)
+[Sparse ISO-FLOP Transformations for Maximizing Training Efficiency](https://openreview.net/pdf?id=iP4WcJ4EX0)
 
 *Vithursan Thangarasa, Shreyas Saxena, Abhay Gupta, Sean Lie*
 
 The paper discusses novel transformations aimed at maximizing the training efficiency (test accuracy w.r.t training FLOPs) of deep neural networks by introducing a family of Sparse Iso-FLOP Transformations.
 
 ![alt attribute goes here!](/assets/sparse_ift_family.png)
-*Different members of the Sparse-IFT family. Transformation of all members is parameterized by a single hyperparameter (i.e., sparsity level ($s$)). Black and white squares denote sparse and active weights, respectively. Green block indicates a non-linear activation function (e.g., BatchNorm, ReLU, LayerNorm). All transformations are derived with sparsity set to 50% as an example, are Iso-FLOP to the dense feedforward function $f_{θ_l}$, and hence can be used as a drop-in replacement of $f_{θ_l}$. See Section 2 of [Sparse ISO-FLOP Transformations for Maximizing Training Efficiency](https://arxiv.org/abs/2303.11525) for more details about each member.*
+*Different members of the Sparse-IFT family. Transformation of all members is parameterized by a single hyperparameter (i.e., sparsity level ($s$)). Black and white squares denote sparse and active weights, respectively. Green block indicates a non-linear activation function (e.g., BatchNorm, ReLU, LayerNorm). All transformations are derived with sparsity set to 50% as an example, are Iso-FLOP to the dense feedforward function $f_{θ_l}$, and hence can be used as a drop-in replacement of $f_{θ_l}$. See Section 2 of [Sparse ISO-FLOP Transformations for Maximizing Training Efficiency](https://openreview.net/pdf?id=iP4WcJ4EX0) for more details about each member.*
 
 ## Dependencies:
 
