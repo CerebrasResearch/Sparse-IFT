@@ -20,22 +20,18 @@ The paper discusses novel transformations aimed at maximizing the training effic
 ## Prerequisites 
 Before running experiments or utilizing the code in this repository, please ensure the following prerequisites are met:
 
-1. Add git submodules:
-```bash
-cd Sparse-IFT
-git submodule update --init
-```
-
-2. Set the environment variable `CODE_SOURCE_DIR` to the path of the source code
+1. Set the environment variable `CODE_SOURCE_DIR` to the path of the source code
 directory. This can be achieved using the following command:
 ```bash
 export CODE_SOURCE_DIR=/path/to/your/source/code
+# e.g., export CODE_SOURCE_DIR=/Users/$USER/Documents/Sparse-IFT/ComputerVision
 ```
 
-3. Create a conda environment using the provided
+2. Create a conda environment using the provided
    environment configuration file.
 
 ```bash
+cd Sparse-IFT
 conda env create -f sparseift_env.yaml
 ```
 

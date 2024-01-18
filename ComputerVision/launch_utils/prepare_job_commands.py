@@ -16,7 +16,7 @@ def create_argparser():
     parser = argparse.ArgumentParser(description='Prepare experiments and their folders before launching')
     parser.add_argument('--job-name', type=str, required=True,
                         help='Get job name to run')
-    parser.add_argument('--base-dir', type=str, default='/cb/home/vithu/extra-storage/want/sift/pretraining',
+    parser.add_argument('--base-dir', type=str, default='./sparseift_experiments',
                         help='base dir to set up launch files and logs')
     parser.add_argument('--overwrite', default=False, const=True, action='store_const',
                         help='Overwrite the experiment-directories')
@@ -77,7 +77,8 @@ def create_run_command(args, code_source_dir, exp_dir):
         setup_exp_command += 'cd CIFAR\n'
     else:
         setup_exp_command += 'cd ImageNet\n'
-    setup_exp_command += f'env $(cat {exp_dir}/experiment_params.env | xargs) bash ./scripts/launch_pretraining.sh\n'
+    setup_exp_command += f'env $(cat {exp_dir}/experiment_params.env | xargs) \
+        bash ./scripts/launch_pretraining.sh\n'
     return setup_exp_command
 
 
