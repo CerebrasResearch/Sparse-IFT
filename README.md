@@ -112,6 +112,19 @@ booktitle={Workshop on Advancing Neural Network Training: Computational Efficien
 year={2023},
 url={https://openreview.net/forum?id=iP4WcJ4EX0}
 }
+
+
+@InProceedings{pmlr-v235-thangarasa24a,
+  title = 	 {Sparse-{IFT}: Sparse Iso-{FLOP} Transformations for Maximizing Training Efficiency},
+  author =       {Thangarasa, Vithursan and Saxena, Shreyas and Gupta, Abhay and Lie, Sean},
+  booktitle = 	 {Proceedings of the 41st International Conference on Machine Learning},
+  year = 	 {2024},
+  volume = 	 {235},
+  series = 	 {Proceedings of Machine Learning Research},
+  publisher =    {PMLR},
+  url = 	 {https://proceedings.mlr.press/v235/thangarasa24a.html},
+}
+
 ```
 
 Feel free to adapt the paths, configurations, and commands based on your specific setup.
