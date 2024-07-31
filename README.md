@@ -105,15 +105,6 @@ If you find this work helpful or use the provided code in your research, please
 consider citing our paper:
 
 ```bibtex
-@inproceedings{thangarasa2023sparseift,
-title={Sparse Iso-{FLOP} Transformations for Maximizing Training Efficiency},
-author={Vithursan Thangarasa and Shreyas Saxena and Abhay Gupta and Sean Lie},
-booktitle={Workshop on Advancing Neural Network Training: Computational Efficiency, Scalability, and Resource Optimization (WANT@NeurIPS 2023)},
-year={2023},
-url={https://openreview.net/forum?id=iP4WcJ4EX0}
-}
-
-
 @InProceedings{pmlr-v235-thangarasa24a,
   title = 	 {Sparse-{IFT}: Sparse Iso-{FLOP} Transformations for Maximizing Training Efficiency},
   author =       {Thangarasa, Vithursan and Saxena, Shreyas and Gupta, Abhay and Lie, Sean},
