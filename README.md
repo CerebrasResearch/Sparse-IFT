@@ -2,7 +2,7 @@
 
 This is the official repository used to run the experiments in the paper that proposed Sparse-IFT. The codebase is implemented in PyTorch.
 
-[Sparse ISO-FLOP Transformations for Maximizing Training Efficiency](https://openreview.net/pdf?id=iP4WcJ4EX0)
+[Sparse ISO-FLOP Transformations for Maximizing Training Efficiency](https://proceedings.mlr.press/v235/thangarasa24a.html)
 
 *Vithursan Thangarasa, Shreyas Saxena, Abhay Gupta, Sean Lie*
 
